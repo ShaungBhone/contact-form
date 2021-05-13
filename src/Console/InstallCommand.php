@@ -33,6 +33,23 @@ class InstallCommand extends Command
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Livewire',
         app_path('Http/Controllers/Livewire'));
 
+        //Mail...
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Mail',
+        app_path('Mail'));
+        
+        // Views...
+        (new Filesystem)->ensureDirectoryExists(resource_path('views/layouts'));
+        (new Filesystem)->ensureDirectoryExists(resource_path('views/components'));
+
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/layouts', resource_path('views/layouts'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/components', resource_path('views/components'));
+
+        // Tailwind / Webpack...
+        copy(__DIR__.'/../../stubs/default/tailwind.config.js', base_path('tailwind.config.js'));
+        copy(__DIR__.'/../../stubs/default/webpack.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__.'/../../stubs/default/resources/sass/app.scss', resource_path('sass/app.scss'));
+        copy(__DIR__.'/../../stubs/default/resources/js/app.js', resource_path('js/app.js'));
+
         //Routes...
         copy(__DIR__.'/../../stubs/default/routes/web.php', base_path('routes/web.php'));
 

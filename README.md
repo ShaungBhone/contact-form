@@ -20,12 +20,6 @@ composer require shaungbhone/contact-form
 // Usage description here
 ```
 
-### Testing
-
-```bash
-composer test
-```
-
 ### Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
@@ -40,8 +34,8 @@ If you discover any security related issues, please email shaungbhone.business@g
 
 ## Credits
 
--   [Shaung Bhone](https://github.com/shaungbhone)
--   [All Contributors](../../contributors)
+- [Shaung Bhone](https://github.com/shaungbhone)
+- [All Contributors](../../contributors)
 
 ## License
 
