@@ -31,7 +31,7 @@ class InstallCommand extends Command
         //Livewire...
         (new Filesystem)->ensureDirectoryExists(app_path('Http/Livewire'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Livewire',
-        app_path('Http/Controllers/Livewire'));
+        app_path('Http/Livewire'));
 
         //Mail...
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Mail',
@@ -43,6 +43,8 @@ class InstallCommand extends Command
 
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/layouts', resource_path('views/layouts'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/components', resource_path('views/components'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/livewire', resource_path('views/livewire'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/emails', resource_path('views/emails'));
 
         // Tailwind / Webpack...
         copy(__DIR__.'/../../stubs/default/tailwind.config.js', base_path('tailwind.config.js'));
