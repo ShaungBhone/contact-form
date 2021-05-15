@@ -46,12 +46,6 @@ class InstallCommand extends Command
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/livewire', resource_path('views/livewire'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/emails', resource_path('views/emails'));
 
-        // Tailwind / Webpack...
-        copy(__DIR__.'/../../stubs/default/tailwind.config.js', base_path('tailwind.config.js'));
-        copy(__DIR__.'/../../stubs/default/webpack.mix.js', base_path('webpack.mix.js'));
-        copy(__DIR__.'/../../stubs/default/resources/sass/app.scss', resource_path('sass/app.scss'));
-        copy(__DIR__.'/../../stubs/default/resources/js/app.js', resource_path('js/app.js'));
-
         //Routes...
         copy(__DIR__.'/../../stubs/default/routes/web.php', base_path('routes/web.php'));
 
