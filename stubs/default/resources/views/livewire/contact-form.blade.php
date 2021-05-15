@@ -65,36 +65,66 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-lg p-8 text-gray-800 md:w-4/5">
-                    <form method="POST" action="/contact" class="flex flex-col space-y-4">
+                <div class="bg-white rounded-lg shadow-lg p-8 text-gray-800 md:w-11/12">
+                    @if ($alertSuccess)
+                    <x-success-message></x-success-message>
+                    @endif
+                    <form wire:submit.prevent="submit" method="POST" action="/contact" class="flex flex-col space-y-4">
                         @csrf
                         <div>
                             <label for="name" class=" text-sm">Your name</label>
-                            <input wire:model="name" class="w-full rounded-md px-4 py-2 mt-2 outline-none" type="text"
-                                placeholder="Your name" name="name" value="{{ old('name') }}">
+                            <input wire:model="name"
+                                class="w-full @error('name') border border-red-500 @enderror rounded-md px-4 py-2 mt-2 outline-none"
+                                type="text" placeholder="Your name" name="name" value="{{ old('name') }}">
+
+                            @error('name')
+                            <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div>
                             <label for="email" class=" text-sm">Your Email</label>
 
-                            <input class="w-full rounded-md px-4 py-2 mt-2 outline-none" type="text"
-                                placeholder="example@gmail.com" name="email" value="{{ old('email') }}">
+                            <input wire:model="email"
+                                class="w-full @error('email') border border-red-500 @enderror rounded-md px-4 py-2 mt-2 outline-none"
+                                type="text" placeholder="example@gmail.com" name="email" value="{{ old('email') }}">
+                            @error('email')
+                            <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div>
                             <label for="phone" class=" text-sm">Phone</label>
 
-                            <input class="w-full rounded-md px-4 py-2 mt-2 outline-none" type="text"
-                                placeholder="Phone number" name="phone" value="{{ old('phone') }}">
+                            <input wire:model="phone"
+                                class="w-full @error('phone') border border-red-500 @enderror rounded-md px-4 py-2 mt-2 outline-none"
+                                type="text" placeholder="Phone number" name="phone" value="{{ old('phone') }}">
+                            @error('phone')
+                            <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div>
                             <label for="message" class=" text-sm">Message</label>
 
-                            <textarea rows="4" class="w-full rounded-md px-4 py-2 mt-2 outline-none" type="text"
-                                placeholder="Message" name="message" value="{{ old('message') }}"></textarea>
+                            <textarea wire:model="message" rows="4"
+                                class="w-full @error('message') border border-red-500 @enderror rounded-md px-4 py-2 mt-2 outline-none"
+                                type="text" placeholder="Message" name="message"
+                                value="{{ old('message') }}"></textarea>
+                            @error('message')
+                            <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                         <button type="submit"
-                            class="inline-block self-end bg-blue-500 text-white font-bold rounded-lg px-6 py-2 uppercase focus:outline-none hover:bg-blue-400">Send
-                            message</button>
+                            class="flex justify-center self-end bg-blue-500 text-white font-bold rounded-lg px-6 py-2 uppercase focus:outline-none hover:bg-blue-400 disabled:opacity-50">
+                            <svg wire:loading wire:target="submit" class="animate-spin mr-3 h-5 w-5"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" stroke="currentColor" stroke-width="4">
+                                </circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                            Send message</button>
                     </form>
+
                 </div>
             </div>
         </div>

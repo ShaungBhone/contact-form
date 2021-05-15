@@ -38,10 +38,8 @@ class InstallCommand extends Command
         app_path('Mail'));
         
         // Views...
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/layouts'));
         (new Filesystem)->ensureDirectoryExists(resource_path('views/components'));
 
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/layouts', resource_path('views/layouts'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/components', resource_path('views/components'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/livewire', resource_path('views/livewire'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/emails', resource_path('views/emails'));
