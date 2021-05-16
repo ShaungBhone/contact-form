@@ -11,7 +11,7 @@ This composer package is using the [TALL stack](https://tallstack.dev) which pro
 
 You can install the package via composer:
 
-> **Note**: Before install the package through via composer `shaungbhone/contact-form`, you need to install [TALL stack](https://tallstack.dev)
+> **Note**: Before install the package through via composer `shaungbhone/contact-form`, you need to install [TALL stack](https://tallstack.dev). or you must install livewire and tailwind.
 
 ```bash
 composer require shaungbhone/contact-form
