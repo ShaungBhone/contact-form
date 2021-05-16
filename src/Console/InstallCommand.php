@@ -28,23 +28,24 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        //Livewire...
-        (new Filesystem)->ensureDirectoryExists(app_path('Http/Livewire'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Livewire',
-        app_path('Http/Livewire'));
+        // //Livewire...
+        // (new Filesystem)->ensureDirectoryExists(app_path('Http/Livewire'));
+        // (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Livewire',
+        // app_path('Http/Livewire'));
 
-        //Mail...
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Mail',
-        app_path('Mail'));
+        // //Mail...
+        // (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Mail',
+        // app_path('Mail'));
         
-        // Views...
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/components'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('views/layouts'));
+        // // Views...
+        // (new Filesystem)->ensureDirectoryExists(resource_path('views/components'));
+        // (new Filesystem)->ensureDirectoryExists(resource_path('views/layouts'));
 
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/components', resource_path('views/components'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/livewire', resource_path('views/livewire'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/layouts', resource_path('views/layouts'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/emails', resource_path('views/emails'));
+        // (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/components', resource_path('views/components'));
+        // (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/livewire', resource_path('views/livewire'));
+        // (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/layouts', resource_path('views/layouts'));
+        // (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/emails', resource_path('views/emails'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default', base_path());
 
         //Routes...
         copy(__DIR__.'/../../stubs/default/routes/web.php', base_path('routes/web.php'));
