@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/shaungbhone/contact-form.svg?style=flat-square)](https://packagist.org/packages/shaungbhone/contact-form)
 [![Total Downloads](https://img.shields.io/packagist/dt/shaungbhone/contact-form.svg?style=flat-square)](https://packagist.org/packages/shaungbhone/contact-form)
-![GitHub Actions](https://github.com/shaungbhone/contact-form/actions/workflows/main.yml/badge.svg)
+<a href="https://img.shields.io/github/license/ShaungBhone/contact-form"></a>
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
