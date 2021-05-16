@@ -1,24 +1,21 @@
-# Very short description of the package
+# Real Time Contact Form with Livewire
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/shaungbhone/contact-form.svg?style=flat-square)](https://packagist.org/packages/shaungbhone/contact-form)
 [![Total Downloads](https://img.shields.io/packagist/dt/shaungbhone/contact-form.svg?style=flat-square)](https://packagist.org/packages/shaungbhone/contact-form)
 [![Issues](https://img.shields.io/github/issues/ShaungBhone/contact-form)](https://github.com/ShaungBhone/contact-form/issues)
 [![License](https://img.shields.io/github/license/ShaungBhone/contact-form)](https://packagist.org/packages/shaungbhone/contact-form)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This composer package is using the [TALL stack](https://tallstack.dev) which provides a real-time validation contact form.
 
 ## Installation
 
 You can install the package via composer:
 
+> **Note**: Before install the package through via composer `shaungbhone/contact-form`, you need to install [TALL stack](https://tallstack.dev)
+
 ```bash
 composer require shaungbhone/contact-form
-```
-
-## Usage
-
-```php
-// Usage description here
+php artisan contact:install
 ```
 
 ### Changelog
@@ -36,6 +33,7 @@ If you discover any security related issues, please email shaungbhone.business@g
 ## Credits
 
 - [Shaung Bhone](https://github.com/shaungbhone)
+- [Tailwind UI](https://tailwindui.com) for contact form
 - [All Contributors](../../contributors)
 
 ## License
