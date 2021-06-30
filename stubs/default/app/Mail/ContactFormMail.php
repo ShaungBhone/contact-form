@@ -30,7 +30,6 @@ class ContactFormMail extends Mailable
      */
     public function build()
     {
-
         return $this->from($this->contact['email'])
             ->subject('Shaung Bhone Contact Form Installation')
             ->markdown('emails.contact-form-mail');
